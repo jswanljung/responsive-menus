@@ -28,9 +28,12 @@ document.querySelectorAll(".toppmeny>li").forEach(function(l) {
     add_class(l, "menuclosed")
     l.addEventListener("click", menuclick);
     
+    /* De här är för att det ska fungera någorlunda att "tabba" genom 
+     * länkarna i menyn. Helst skulle man göra det möjligt att navigera
+     * med pilarna också men det kräver mer arbete.
+    */
     l.addEventListener("focusin", menufocused);
     l.addEventListener("focusout", menuunfocused);
-    //l.setAttribute("tabindex", 0)
 })
 
 /* Öppna eller stäng menyn som användaren klickar på, se till att alla
