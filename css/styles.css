@@ -85,7 +85,7 @@ nav ul {
 
 /* För lite bredare skärmar ska menyn hamna på höger sida.
    Lättfixat med flexbox. */
-@media (min-width:650px) and (max-width: 900px) {
+@media (min-device-width:650px) and (max-width: 900px) {
     #pagecontent {
         display: flex;
     }
@@ -99,7 +99,7 @@ nav ul {
 }
 
 /* För riktigt breda skärmar använder vi toppmeny. */
-@media (min-width: 901px) {
+@media (min-device-width: 650px) and (min-width: 901px) {
     .toppmeny {
         display: flex;
         /* Vi måste ange position: relative för att 
