@@ -36,10 +36,69 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 article {
-    margin: 10px;
+    margin: 0 2vw;
 }
 
-nav li {
+.toppmeny {
+    background-color: gray;
+    margin: 2vw;
+}
+
+.toppmeny>li {
     display:block;
-    font-size: 100%;
+}
+
+.toppmeny>li:hover {
+    background-color: black;
+}
+
+.undermenynamn, nav a {
+    display: block;
+    color: white;
+    padding: 0.5em 2vw;
+    height: 2em;
+}
+
+.undermeny>li {
+    background-color: lightgrey;
+    border-bottom: solid 1px #cccccc;
+}
+
+.undermeny>li:hover {
+    background-color: orange;
+}
+
+.menuclosed ul.undermeny {
+    display: none;
+}
+
+@media (min-width:650px) and (max-width: 900px) {
+    #pagecontent {
+        display: flex;
+    }
+    
+    nav {
+        min-width: 200px;
+    }
+}
+
+@media (min-width: 901px) {
+    .toppmeny {
+        display: flex;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .menuclosed ul.undermeny {
+        display: block;
+
+    }
+    
+    .toppmeny {
+        height: 2em;
+    }
+    
+    .menuclosed {
+        overflow: hidden;
+    }
 }
