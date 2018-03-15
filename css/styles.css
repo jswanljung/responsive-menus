@@ -1,3 +1,7 @@
+/******************************
+ * Grundinställningar.
+ ******************************
+ */
 html {
   box-sizing: border-box;
   font-size: 16px;
@@ -23,20 +27,26 @@ img {
   height: auto;
 }
 
-nav a {
-    text-decoration: none;
-}
-
-nav ul {
-    font-family: Calibri, sans-serif;
-}
-
 h1, h2, h3, h4, h5, h6, p {
     margin: 1em 0;
 }
 
 article {
     margin: 0 2vw;
+}
+
+/******************************
+ * Härifrån stiler som hör till menyn.
+ ******************************
+*/
+
+nav a {
+/* Länkarna i menyn ska inte vara understreckade. */
+    text-decoration: none;
+}
+
+nav ul {
+    font-family: Calibri, sans-serif;
 }
 
 .toppmeny {
@@ -68,10 +78,13 @@ article {
     background-color: orange;
 }
 
+/* Den här klassen döljer undermenyer. Sätts i javascript. */
 .menuclosed ul.undermeny {
     display: none;
 }
 
+/* För lite bredare skärmar ska menyn hamna på höger sida.
+   Lättfixat med flexbox. */
 @media (min-width:650px) and (max-width: 900px) {
     #pagecontent {
         display: flex;
@@ -79,14 +92,23 @@ article {
     
     nav {
         min-width: 200px;
+        /* order gör att nav hamnar efter i flex-layouten 
+         utan hamnar den på vänster sida i stället. */
+        order: 1;
     }
 }
 
+/* För riktigt breda skärmar använder vi toppmeny. */
 @media (min-width: 901px) {
     .toppmeny {
         display: flex;
+        /* Vi måste ange position: relative för att 
+           z-index ska respekteras och z-index behövs
+           för att inte våra menyer ska hamna under
+           efterföljande innehåll.
+        */
         position: relative;
-        z-index: 1;
+        z-index: 100;
     }
     
     .menuclosed ul.undermeny {
@@ -99,6 +121,10 @@ article {
     }
     
     .menuclosed {
+        /* Det här gör så att det som inte ryms innanför den angivna
+         * höjden (height) för .toppmeny inte syns. Med overflow:visible
+         * (default) så sticker menyerna.
+         */
         overflow: hidden;
     }
 }
