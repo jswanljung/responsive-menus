@@ -61,7 +61,7 @@ nav ul {
     display:block;
 }
 
-.toppmeny>li:hover {
+.toppmeny>li:hover, .toppmeny>li:focus-within {
     background-color: black;
 }
 
@@ -77,7 +77,7 @@ nav ul {
     border-bottom: solid 1px #cccccc;
 }
 
-.undermeny>li:hover {
+.undermeny>li:hover, .undermeny>li:focus-within {
     background-color: orange;
 }
 

@@ -27,6 +27,10 @@ document.querySelectorAll(".toppmeny>li").forEach(function(l) {
     /* Se till att allt är stängt förstås! */
     add_class(l, "menuclosed")
     l.addEventListener("click", menuclick);
+    
+    l.addEventListener("focusin", menufocused);
+    l.addEventListener("focusout", menuunfocused);
+    //l.setAttribute("tabindex", 0)
 })
 
 /* Öppna eller stäng menyn som användaren klickar på, se till att alla
@@ -44,6 +48,15 @@ function menuclick(e) {
         else add_class(l, "menuclosed"); 
     });
 }
+    
+function menufocused(e) {
+    remove_class(e.currentTarget, "menuclosed");
+}
+    
+function menuunfocused(e) {
+    add_class(e.currentTarget, "menuclosed");
+}
+    
 
 /****************************************************************
  * Nedanför det här strecket finns lättåteranvända funktioner för
