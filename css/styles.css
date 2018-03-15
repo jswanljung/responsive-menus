@@ -38,6 +38,11 @@ body {
     width: 100vw;
 }
 
+#pagecontent {
+    max-width:1000px;
+    margin:auto;
+}
+
 /******************************
  * Härifrån stiler som hör till menyn.
  ******************************
