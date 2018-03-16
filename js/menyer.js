@@ -93,7 +93,7 @@ function toggle_class(el, cls) {
  * @param {string} cls: klassen att leta efter.
  */
 function has_class(el, cls) {
-    return el.className.split(" ").includes(cls)
+    return el.className.split(" ").includes(cls);
 }
 
 /**
