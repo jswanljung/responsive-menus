@@ -25,7 +25,7 @@ function() {
    registreras anropas funktionen menuclick. */
 document.querySelectorAll(".toppmeny>li").forEach(function(l) {
     /* Se till att allt är stängt förstås! */
-    add_class(l, "menuclosed")
+    add_class(l, "menuclosed");
     l.addEventListener("click", menuclick);
     
     /* De här är för att det ska fungera någorlunda att "tabba" genom 
